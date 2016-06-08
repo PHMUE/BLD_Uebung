@@ -26,6 +26,6 @@ public class WordCount {
         JavaPairRDD<String, Integer> counts = pairs.reduceByKey(new Function2<Integer, Integer, Integer>() {
             public Integer call(Integer a, Integer b) { return a + b; }
         });
-        counts.saveAsTextFile("hdfs://...");
+        System.out.println(counts); //counts.saveAsTextFile("hdfs://...");
     }
 }
